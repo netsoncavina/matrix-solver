@@ -1,4 +1,5 @@
 from PySimpleGUI import PySimpleGUI as sg
+from funcoes import *
 
 # Layout
 sg.theme('Dark grey 9')
@@ -20,5 +21,29 @@ while True:
     events, values = window.read()
     if events == sg.WINDOW_CLOSED:
         break
-    
+    if events == "Calcular":
+        x, y, z = calculaDeterminantes(float(values['a1']), float(values['a2']), float(values['a3']), float(values['a4']), float(values['b1']), float(values['b2']), float(values['b3']), float(values['b4']), float(values['c1']), float(values['c2']), float(values['c3']), float(values['c4']))
+        window.Element('outputX').Update(x)
+        window.Element('outputY').Update(y)
+        window.Element('outputZ').Update(z)
+    if events == "Limpar":
+        window.Element('a1').Update('')
+        window.Element('a2').Update('')
+        window.Element('a3').Update('')
+        window.Element('a4').Update('')
+        window.Element('b1').Update('')
+        window.Element('b2').Update('')
+        window.Element('b3').Update('')
+        window.Element('b4').Update('')
+        window.Element('c1').Update('')
+        window.Element('c2').Update('')
+        window.Element('c3').Update('')
+        window.Element('c4').Update('')
+        window.Element('outputX').Update('')
+        window.Element('outputY').Update('')
+        window.Element('outputZ').Update('')
+        window.Element('outputX').Update('')
+        window.Element('outputY').Update('')
+        window.Element('outputZ').Update('')
+
        
